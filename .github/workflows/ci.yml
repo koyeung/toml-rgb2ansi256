@@ -69,7 +69,7 @@ jobs:
 
     - name: Install grcov
       # https://github.com/mozilla/grcov#how-to-get-grcov
-      run: cargo install grcov
+      run: cargo install grcov --locked
 
     - run: sccache --zero-stats
 

@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        filter: tree:0
+        fetch-depth: 2
 
     - name: Restore lychee cache
       uses: actions/cache@v3
@@ -39,7 +39,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        filter: tree:0
+        fetch-depth: 2
     - uses: mozilla-actions/sccache-action@v0.0.3
     - uses: dtolnay/rust-toolchain@stable
       with:
@@ -57,7 +57,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        filter: tree:0
+        fetch-depth: 2
 
     - uses: mozilla-actions/sccache-action@v0.0.3
     - name: Cache Cargo dependencies
@@ -111,7 +111,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        filter: tree:0
+        fetch-depth: 2
     - uses: mozilla-actions/sccache-action@v0.0.3
     - uses: dtolnay/rust-toolchain@stable
       with:

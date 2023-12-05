@@ -1,0 +1,8 @@
+{
+  "bump-minor-pre-major": true,
+  "release-type": "rust",
+  "include-component-in-tag": false,
+  "packages": {
+    ".": {}
+  }
+}

@@ -2,7 +2,7 @@
 name = "toml-rgb2ansi256"
 version = "0.1.0"
 edition = "2021"
-license = "Apache-2.0"
+license = "MIT OR Apache-2.0"
 rust-version = "1.74"
 categories = ["config", "command-line-utilities", "graphics"]
 keywords = ["toml", "color", "ansi-256"]

@@ -65,8 +65,6 @@ jobs:
       # https://github.com/mozilla/grcov#how-to-get-grcov
       run: cargo install grcov --locked
 
-    - run: sccache --zero-stats
-
     - name: Build
       env:
         RUSTFLAGS: -Cinstrument-coverage
@@ -96,5 +94,3 @@ jobs:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       with:
         files: ./target/debug/coverage/lcov
-
-    - run: sccache --show-stats

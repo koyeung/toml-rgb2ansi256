@@ -43,9 +43,9 @@ jobs:
 
     - run: cargo verify-project
     - run: cargo fmt --check --all
-    - run: cargo clippy --workspace -- -D warnings
-    - run: cargo check --workspace --future-incompat-report
-    - run: cargo doc --no-deps --workspace --document-private-items
+    - run: cargo clippy -- -D warnings
+    - run: cargo check --future-incompat-report
+    - run: cargo doc --no-deps --document-private-items
 
   build_and_test:
     runs-on: ubuntu-latest
@@ -70,13 +70,13 @@ jobs:
     - name: Build
       env:
         RUSTFLAGS: -Cinstrument-coverage
-      run: cargo build --workspace --verbose
+      run: cargo build --verbose
 
     - name: Test
       env:
         LLVM_PROFILE_FILE: toml-rgb2ansi256-%p-%m.profraw
         RUSTFLAGS: -Cinstrument-coverage
-      run: cargo test --workspace --verbose
+      run: cargo test --verbose
 
     - name: Generate coverage
       run: |

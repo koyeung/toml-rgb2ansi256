@@ -29,4 +29,4 @@ jobs:
       with:
         toolchain: "1.74" # MSRV
 
-    - run: cargo check --workspace --all-targets
+    - run: cargo check --all-targets

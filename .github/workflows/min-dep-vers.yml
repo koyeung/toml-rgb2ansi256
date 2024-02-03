@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - uses: mozilla-actions/sccache-action@v0.0.3
+    - uses: mozilla-actions/sccache-action@v0.0.4
     - name: Cache Cargo dependencies
       uses: Swatinem/rust-cache@v2
 

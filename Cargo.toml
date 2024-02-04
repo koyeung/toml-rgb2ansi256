@@ -17,4 +17,6 @@ rgb2ansi256 = "0.1.1"
 toml_edit = "0.21.0"
 
 [lints.clippy]
+# https://doc.rust-lang.org/cargo/reference/manifest.html#the-lints-section
+# https://doc.rust-lang.org/stable/clippy/index.html
 cargo = "warn"

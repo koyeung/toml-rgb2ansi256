@@ -1,5 +1,8 @@
 name: cargo-vet
-on: [push, pull_request]
+
+# run only manually, otherwise, it fails on each version bump
+on: workflow_dispatch
+
 jobs:
   cargo-vet:
     name: Vet Dependencies
@@ -7,7 +10,7 @@ jobs:
     env:
       CARGO_VET_VERSION: 0.9.1
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v4
     - name: Install Rust
       run: rustup update stable && rustup default stable
     - uses: actions/cache@v4

@@ -5,19 +5,6 @@
 
 version: 2
 updates:
-  - package-ecosystem: "cargo" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "monthly"
-    commit-message:
-      prefix: "chore(deps): "
-    versioning-strategy: "lockfile-only"
-    groups:
-      # one PR for all
-      all:
-        patterns:
-          - "*"
-
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"

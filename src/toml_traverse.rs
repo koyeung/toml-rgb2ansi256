@@ -54,24 +54,6 @@ mod tests {
         a = "a2"
         "##;
 
-        const EXPECTED: &str = r##"
-        # this is comment
-
-        a = "A"
-        "a.b" = "A.B"          # comment on keyword.directive
-        c = { d = "C.D" }
-
-        [p]
-        "a" = "P.A"  # some comment
-        "b" = "P.B"
-
-        [[q]]
-        a = "A1"
-
-        [[q]]
-        a = "A2"
-        "##;
-
         let mut doc = INPUT.parse::<Document>().expect("doc should be in toml");
 
         visit_item(doc.as_item_mut(), |v| {
@@ -89,7 +71,6 @@ mod tests {
             }
         });
 
-        let result = doc.to_string();
-        assert_eq!(result, EXPECTED);
+        insta::assert_toml_snapshot!(doc.to_string());
     }
 }

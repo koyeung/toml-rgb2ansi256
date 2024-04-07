@@ -63,12 +63,6 @@ mod tests {
         b = "#00ffaf"
         "##;
 
-        const EXPECTED: &str = r##"
-        a = "unchanged"
-        b = "49"
-        "##;
-
-        let result = patch_doc(INPUT);
-        assert_eq!(result, EXPECTED);
+        insta::assert_toml_snapshot!(patch_doc(INPUT));
     }
 }

@@ -25,21 +25,41 @@ url = "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml"
 [imports.zcash]
 url = "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml"
 
+[[exemptions.console]]
+version = "0.15.8"
+criteria = "safe-to-run"
+
+[[exemptions.encode_unicode]]
+version = "0.3.6"
+criteria = "safe-to-run"
+
 [[exemptions.hashbrown]]
 version = "0.14.3"
 criteria = "safe-to-deploy"
 
 [[exemptions.indexmap]]
-version = "2.2.2"
+version = "2.2.6"
 criteria = "safe-to-deploy"
 
+[[exemptions.insta]]
+version = "1.38.0"
+criteria = "safe-to-run"
+
 [[exemptions.memchr]]
-version = "2.7.1"
+version = "2.7.2"
 criteria = "safe-to-deploy"
 
 [[exemptions.rgb2ansi256]]
 version = "0.1.1"
 criteria = "safe-to-deploy"
+
+[[exemptions.similar]]
+version = "2.5.0"
+criteria = "safe-to-run"
+
+[[exemptions.syn]]
+version = "2.0.58"
+criteria = "safe-to-run"
 
 [[exemptions.toml_datetime]]
 version = "0.6.5"
@@ -49,6 +69,42 @@ criteria = "safe-to-deploy"
 version = "0.21.1"
 criteria = "safe-to-deploy"
 
+[[exemptions.windows-sys]]
+version = "0.52.0"
+criteria = "safe-to-run"
+
+[[exemptions.windows-targets]]
+version = "0.52.4"
+criteria = "safe-to-run"
+
+[[exemptions.windows_aarch64_gnullvm]]
+version = "0.52.4"
+criteria = "safe-to-run"
+
+[[exemptions.windows_aarch64_msvc]]
+version = "0.52.4"
+criteria = "safe-to-run"
+
+[[exemptions.windows_i686_gnu]]
+version = "0.52.4"
+criteria = "safe-to-run"
+
+[[exemptions.windows_i686_msvc]]
+version = "0.52.4"
+criteria = "safe-to-run"
+
+[[exemptions.windows_x86_64_gnu]]
+version = "0.52.4"
+criteria = "safe-to-run"
+
+[[exemptions.windows_x86_64_gnullvm]]
+version = "0.52.4"
+criteria = "safe-to-run"
+
+[[exemptions.windows_x86_64_msvc]]
+version = "0.52.4"
+criteria = "safe-to-run"
+
 [[exemptions.winnow]]
-version = "0.5.39"
+version = "0.5.40"
 criteria = "safe-to-deploy"

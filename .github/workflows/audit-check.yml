@@ -6,11 +6,13 @@ on:
       - '**/Cargo.lock'
       - '**/Cargo.toml'
       - ".github/workflows/audit-check.yml"
+      - 'deny.toml'
   pull_request:
     paths:
       - '**/Cargo.lock'
       - '**/Cargo.toml'
       - ".github/workflows/audit-check.yml"
+      - 'deny.toml'
 
 env:
   CARGO_TERM_COLOR: always

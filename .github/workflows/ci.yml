@@ -15,6 +15,9 @@ env:
   SCCACHE_GHA_ENABLED: "true"
   RUSTC_WRAPPER: "sccache"
 
+  # https://crates.io/crates/insta
+  CI: true
+
 jobs:
 
   check_project_files:

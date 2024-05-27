@@ -20,16 +20,16 @@ jobs:
   build_and_test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - uses: mozilla-actions/sccache-action@v0.0.4
-    - name: Cache Cargo dependencies
-      uses: Swatinem/rust-cache@v2
+      - uses: mozilla-actions/sccache-action@v0.0.4
+      - name: Cache Cargo dependencies
+        uses: Swatinem/rust-cache@v2
 
-    - uses: dtolnay/rust-toolchain@stable
-      with:
-        toolchain: nightly
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: nightly
 
-    - run: cargo +nightly -Zdirect-minimal-versions update
-    - run: cargo build --verbose
-    - run: cargo test --verbose
+      - run: cargo +nightly -Zdirect-minimal-versions update
+      - run: cargo build --verbose
+      - run: cargo test --verbose

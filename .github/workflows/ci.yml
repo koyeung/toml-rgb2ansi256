@@ -66,8 +66,9 @@ jobs:
           components: llvm-tools-preview
 
       - name: Install grcov
-        # https://github.com/mozilla/grcov#how-to-get-grcov
-        run: cargo install grcov --locked
+        uses: taiki-e/install-action@v2
+        with:
+          tool: grcov
 
       - name: Build
         env:

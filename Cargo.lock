@@ -152,7 +152,7 @@ dependencies = [
 
 [[package]]
 name = "toml-rgb2ansi256"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "insta",
  "rgb2ansi256",

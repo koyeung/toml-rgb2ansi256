@@ -1,12 +1,12 @@
 //! Patch RGB value to ANSI-256 value in TOML document.
 
-use toml_edit::{Document, Value};
+use toml_edit::{DocumentMut, Value};
 
 use crate::toml_traverse::visit_item;
 
 /// Transform value node of RGB hex values to ANSI-256 color index.
 pub fn patch_doc(doc: &str) -> String {
-    let mut doc = doc.parse::<Document>().expect("should be proper toml");
+    let mut doc = doc.parse::<DocumentMut>().expect("should be proper toml");
 
     visit_item(doc.as_item_mut(), |v| {
         if let Value::String(s) = v {

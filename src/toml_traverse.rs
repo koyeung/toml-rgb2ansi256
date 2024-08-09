@@ -32,7 +32,7 @@ fn visit_value<F: Fn(&mut Value) + Copy>(value: &mut Value, f: F) {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use toml_edit::Document;
+    use toml_edit::DocumentMut;
 
     #[test]
     fn test_modify_values() {
@@ -54,7 +54,7 @@ mod tests {
         a = "a2"
         "##;
 
-        let mut doc = INPUT.parse::<Document>().expect("doc should be in toml");
+        let mut doc = INPUT.parse::<DocumentMut>().expect("doc should be in toml");
 
         visit_item(doc.as_item_mut(), |v| {
             if let Value::String(s) = v {

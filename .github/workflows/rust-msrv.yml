@@ -28,6 +28,6 @@ jobs:
 
       - uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: "1.74" # MSRV
+          toolchain: "1.85" # MSRV
 
       - run: cargo check --all-targets

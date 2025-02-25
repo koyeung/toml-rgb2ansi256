@@ -5,7 +5,7 @@ default_stages: [pre-commit]
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -31,14 +31,8 @@ repos:
         args: [--autofix]
       - id: trailing-whitespace
 
-  - repo: https://github.com/crate-ci/committed
-    rev: v1.0.20
-    hooks:
-      - id: committed
-        stages: [commit-msg]
-
   - repo: https://github.com/crate-ci/typos
-    rev: v1.23.6
+    rev: v1.29.9
     hooks:
       - id: typos
 
@@ -49,3 +43,8 @@ repos:
       - id: cargo-check
       - id: clippy
         args: ['--', '-D', 'warnings']
+
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v4.2.2
+    hooks:
+      - id: commitizen

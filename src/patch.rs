@@ -45,10 +45,10 @@ fn string_to_rgb(s: &str) -> Result<Rgb, String> {
         ) {
             Ok(Rgb { r, g, b })
         } else {
-            Err(format!("bad rgb hexcode: {}", s))
+            Err(format!("bad rgb hexcode: {s}"))
         }
     } else {
-        Err(format!("{} is not a rgb str", s))
+        Err(format!("{s} is not a rgb str"))
     }
 }
 

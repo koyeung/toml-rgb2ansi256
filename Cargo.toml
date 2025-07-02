@@ -1,6 +1,6 @@
 [package]
 name = "toml-rgb2ansi256"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["YEUNG King On <koyeung@gmail.com>"]
 categories = ["config", "command-line-utilities", "graphics"]
 edition = "2024"

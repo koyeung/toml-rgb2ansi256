@@ -70,7 +70,7 @@ jobs:
 
       - name: Query Cargo.toml
         id: query-cargo-toml
-        run: echo "rust_version=$(yq '.workspace.package.rust-version' Cargo.toml)" >> "$GITHUB_OUTPUT"
+        run: echo "rust_version=$(yq '.package.rust-version' Cargo.toml)" >> "$GITHUB_OUTPUT"
 
       - uses: dtolnay/rust-toolchain@master
         with:

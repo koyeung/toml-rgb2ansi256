@@ -41,8 +41,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: mozilla-actions/sccache-action@v0.0.9
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Query Cargo.toml
+        id: query-cargo-toml
+        run: echo "rust_version=$(yq '.package.rust-version' Cargo.toml)" >> "$GITHUB_OUTPUT"
+
+      - uses: dtolnay/rust-toolchain@master
         with:
+          toolchain: ${{ steps.query-cargo-toml.outputs.rust_version }}
           components: rustfmt, clippy
 
       - run: cargo verify-project
@@ -61,8 +68,13 @@ jobs:
       - name: Cache Cargo dependencies
         uses: Swatinem/rust-cache@v2
 
-      - uses: dtolnay/rust-toolchain@stable
+      - name: Query Cargo.toml
+        id: query-cargo-toml
+        run: echo "rust_version=$(yq '.package.rust-version' Cargo.toml)" >> "$GITHUB_OUTPUT"
+
+      - uses: dtolnay/rust-toolchain@master
         with:
+          toolchain: ${{ steps.query-cargo-toml.outputs.rust_version }}
           components: llvm-tools-preview
 
       - name: Install grcov

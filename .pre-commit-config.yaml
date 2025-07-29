@@ -41,8 +41,9 @@ repos:
     hooks:
       - id: fmt
       - id: cargo-check
+        args: [--all-targets']
       - id: clippy
-        args: ['--', '-D', 'warnings']
+        args: ['--all-targets', '--', '-D', 'warnings']
 
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v4.2.2

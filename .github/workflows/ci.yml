@@ -54,8 +54,8 @@ jobs:
 
       - run: cargo verify-project
       - run: cargo fmt --check --all
-      - run: cargo clippy -- -D warnings
-      - run: cargo check --future-incompat-report
+      - run: cargo clippy --all-targets -- -D warnings
+      - run: cargo check --all-targets --future-incompat-report
       - run: cargo doc --no-deps --document-private-items
 
   build_and_test:

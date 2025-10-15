@@ -1,5 +1,4 @@
 name: audit-check
-
 on:
   push:
     paths:
@@ -13,12 +12,9 @@ on:
       - '**/Cargo.toml'
       - ".github/workflows/audit-check.yml"
       - 'deny.toml'
-
 env:
   CARGO_TERM_COLOR: always
-
 jobs:
-
   cargo-deny:
     runs-on: ubuntu-latest
     strategy:
@@ -26,10 +22,8 @@ jobs:
         checks:
           - advisories
           - bans licenses
-
     # Prevent sudden announcement of a new advisory from failing ci:
     continue-on-error: ${{ matrix.checks == 'advisories' }}
-
     steps:
       - uses: actions/checkout@v5
       - uses: EmbarkStudios/cargo-deny-action@v2

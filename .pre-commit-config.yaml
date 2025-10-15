@@ -2,7 +2,6 @@
 # while enable action to run on stage commit-msg if chosen
 default_install_hook_types: [pre-commit, commit-msg]
 default_stages: [pre-commit]
-
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
@@ -30,12 +29,15 @@ repos:
       - id: pretty-format-json
         args: [--autofix]
       - id: trailing-whitespace
-
   - repo: https://github.com/crate-ci/typos
-    rev: v1.35.4
+    rev: v1.38.1
     hooks:
       - id: typos
-
+  - repo: https://github.com/google/yamlfmt
+    rev: v0.18.0
+    hooks:
+      - id: yamlfmt
+        files: '.*\.(yml|yaml)$'
   - repo: https://github.com/doublify/pre-commit-rust
     rev: v1.0
     hooks:
@@ -44,8 +46,7 @@ repos:
         args: ['--all-targets']
       - id: clippy
         args: ['--all-targets', '--', '-D', 'warnings']
-
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.8.3
+    rev: v4.9.1
     hooks:
       - id: commitizen

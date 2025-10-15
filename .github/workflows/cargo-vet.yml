@@ -1,8 +1,6 @@
 name: cargo-vet
-
 # run only manually, otherwise, it fails on each version bump
 on: workflow_dispatch
-
 jobs:
   cargo-vet:
     name: Vet Dependencies

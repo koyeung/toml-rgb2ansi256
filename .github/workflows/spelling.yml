@@ -1,13 +1,9 @@
 name: Spelling
-
 permissions:
   contents: read
-
 on: [pull_request]
-
 env:
   RUST_BACKTRACE: 1
-
 jobs:
   spelling:
     name: Spell Check with Typos

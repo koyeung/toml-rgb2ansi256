@@ -30,14 +30,13 @@ repos:
         args: [--autofix]
       - id: trailing-whitespace
   - repo: https://github.com/crate-ci/typos
-    rev: v1.38.1
+    rev: v1.39.0
     hooks:
       - id: typos
   - repo: https://github.com/google/yamlfmt
-    rev: v0.18.0
+    rev: v0.20.0
     hooks:
       - id: yamlfmt
-        files: '.*\.(yml|yaml)$'
   - repo: https://github.com/doublify/pre-commit-rust
     rev: v1.0
     hooks:

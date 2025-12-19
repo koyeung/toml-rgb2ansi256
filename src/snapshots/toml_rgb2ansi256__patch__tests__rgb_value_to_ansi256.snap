@@ -1,9 +1,0 @@
----
-source: src/patch.rs
-expression: patch_doc(INPUT)
----
-'''
-
-        a = "unchanged"
-        b = "49"
-        '''

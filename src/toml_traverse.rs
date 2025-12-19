@@ -54,6 +54,24 @@ mod tests {
         a = "a2"
         "##;
 
+        const OUTPUT: &str = r##"
+        # this is comment
+
+        a = "A"
+        "a.b" = "A.B"          # comment on keyword.directive
+        c = { d = "C.D" }
+
+        [p]
+        "a" = "P.A"  # some comment
+        "b" = "P.B"
+
+        [[q]]
+        a = "A1"
+
+        [[q]]
+        a = "A2"
+        "##;
+
         let mut doc = INPUT.parse::<DocumentMut>().expect("doc should be in toml");
 
         visit_item(doc.as_item_mut(), |v| {
@@ -71,6 +89,6 @@ mod tests {
             }
         });
 
-        insta::assert_toml_snapshot!(doc.to_string());
+        assert_eq!(doc.to_string(), OUTPUT);
     }
 }

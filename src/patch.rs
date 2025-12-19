@@ -63,6 +63,11 @@ mod tests {
         b = "#00ffaf"
         "##;
 
-        insta::assert_toml_snapshot!(patch_doc(INPUT));
+        const OUTPUT: &str = r##"
+        a = "unchanged"
+        b = "49"
+        "##;
+
+        assert_eq!(patch_doc(INPUT), OUTPUT);
     }
 }

@@ -20,6 +20,3 @@ toml_edit = "0.24.0"
 # https://doc.rust-lang.org/cargo/reference/manifest.html#the-lints-section
 # https://doc.rust-lang.org/stable/clippy/index.html
 cargo = "warn"
-
-[dev-dependencies]
-insta = { version = "1.45.0", features = ["toml"] }

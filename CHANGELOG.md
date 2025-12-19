@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4](https://github.com/koyeung/toml-rgb2ansi256/compare/v0.1.3...v0.1.4) (2025-12-19)
+
+
+### Bug Fixes
+
+* remove dev deps: insta ([6555cfd](https://github.com/koyeung/toml-rgb2ansi256/commit/6555cfdccba09a91ef7bf4bba38e18b7da9050b8))
+
 ## [0.1.3](https://github.com/koyeung/toml-rgb2ansi256/compare/v0.1.2...v0.1.3) (2025-07-02)
 
 

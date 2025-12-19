@@ -87,7 +87,7 @@ dependencies = [
 
 [[package]]
 name = "toml-rgb2ansi256"
-version = "0.1.3"
+version = "0.1.4"
 dependencies = [
  "rgb2ansi256",
  "toml_edit",

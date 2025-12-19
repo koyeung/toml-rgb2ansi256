@@ -12,6 +12,7 @@ updates:
     commit-message:
       prefix: "chore(deps): "
     target-branch: "main"
+    open-pull-requests-limit: 5
     groups:
       # one PR for all
       all:
@@ -25,6 +26,7 @@ updates:
       cronjob: "0 0 25 * *"
     commit-message:
       prefix: "chore(deps): "
+    open-pull-requests-limit: 5
     groups:
       # one PR for all
       all:

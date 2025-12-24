@@ -1,0 +1,12 @@
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        actions/*: ref-pin
+        asral-sh/*: ref-pin
+        dtolnay/*: ref-pin
+        EmbarkStudios/cargo-deny-action: ref-pin
+        github/*: ref-pin
+        mozilla-actions/sccache-action: ref-pin
+        Swatinem/rust-cache: ref-pin
+        taiki-e/*: ref-pin

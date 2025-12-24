@@ -49,3 +49,9 @@ repos:
     rev: v4.10.0
     hooks:
       - id: commitizen
+
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: v1.19.0
+    hooks:
+      # Run the linter.
+      - id: zizmor

@@ -16,19 +16,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - name: Restore lychee cache
         uses: actions/cache@v5
         with:
           path: .lycheecache
           key: cache-lychee-${{ github.sha }}
           restore-keys: cache-lychee-
-      - uses: lycheeverse/lychee-action@v2
+      - uses: lycheeverse/lychee-action@a8c4c7cb88f0c7386610c35eb25108e448569cb0 # v2.7.0
         with:
           args: "--cache --max-cache-age 1d . -v *.md"
   check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - uses: Swatinem/rust-cache@v2
         with:
           shared-key: "${{ github.workflow }}"
@@ -50,6 +54,8 @@ jobs:
     needs: check
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - uses: Swatinem/rust-cache@v2
         with:
           shared-key: "${{ github.workflow }}"
@@ -86,7 +92,7 @@ jobs:
             --ignore "/*" \
             -o ./target/debug/coverage/
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:

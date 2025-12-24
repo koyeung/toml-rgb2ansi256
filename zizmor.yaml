@@ -3,7 +3,7 @@ rules:
     config:
       policies:
         actions/*: ref-pin
-        asral-sh/*: ref-pin
+        astral-sh/*: ref-pin
         dtolnay/*: ref-pin
         EmbarkStudios/cargo-deny-action: ref-pin
         github/*: ref-pin

@@ -9,6 +9,9 @@ jobs:
       CARGO_VET_VERSION: 0.9.1
     steps:
       - uses: actions/checkout@v6
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: "${{ github.workflow }}"
       - name: Install Rust
         run: rustup update stable && rustup default stable
       - uses: actions/cache@v5

@@ -29,14 +29,17 @@ repos:
       - id: pretty-format-json
         args: [--autofix]
       - id: trailing-whitespace
+
   - repo: https://github.com/crate-ci/typos
     rev: v1.40.0
     hooks:
       - id: typos
+
   - repo: https://github.com/google/yamlfmt
     rev: v0.20.0
     hooks:
       - id: yamlfmt
+
   - repo: https://github.com/doublify/pre-commit-rust
     rev: v1.0
     hooks:
@@ -45,8 +48,9 @@ repos:
         args: ['--all-targets']
       - id: clippy
         args: ['--all-targets', '--', '-D', 'warnings']
+
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.10.0
+    rev: v4.10.1
     hooks:
       - id: commitizen
 

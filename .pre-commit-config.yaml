@@ -46,17 +46,17 @@ repos:
         args: ['--fix']
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.10.1
+    rev: v4.13.8
     hooks:
       - id: commitizen
 
   - repo: https://github.com/crate-ci/typos
-    rev: v1.40.0
+    rev: v1.43.5
     hooks:
       - id: typos
 
   - repo: https://github.com/google/yamlfmt
-    rev: v0.20.0
+    rev: v0.21.0
     hooks:
       - id: yamlfmt
 
@@ -70,6 +70,6 @@ repos:
         args: ['--all-targets', '--', '-D', 'warnings']
 
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
-    rev: v1.19.0
+    rev: v1.22.0
     hooks:
       - id: zizmor

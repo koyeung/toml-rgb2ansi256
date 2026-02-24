@@ -14,7 +14,7 @@ description = "Convert RGB Hex to ANSI-256 codes"
 
 [dependencies]
 rgb2ansi256 = "0.1.1"
-toml_edit = "0.24.1"
+toml_edit = "0.25.2"
 
 [lints.clippy]
 # https://doc.rust-lang.org/cargo/reference/manifest.html#the-lints-section

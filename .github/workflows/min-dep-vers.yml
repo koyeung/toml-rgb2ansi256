@@ -1,11 +1,15 @@
 name: min-dep-vers
+
 on: [push, pull_request]
+
 permissions:
   contents: read
+
 env:
   CARGO_TERM_COLOR: always
   CARGO_INCREMENTAL: 0
   RUSTFLAGS: -Dwarnings
+
   # setup sccache for Rust; see https://github.com/Mozilla-Actions/sccache-action
   SCCACHE_GHA_ENABLED: "true"
   RUSTC_WRAPPER: "sccache"
@@ -24,10 +28,11 @@ jobs:
 
       - uses: mozilla-actions/sccache-action@v0.0.9
 
-      - uses: dtolnay/rust-toolchain@stable
-        with:
-          toolchain: nightly
+      - uses: dtolnay/rust-toolchain@nightly
 
-      - run: cargo +nightly -Zdirect-minimal-versions update
-      - run: cargo build --verbose
-      - run: cargo test --verbose
+      - uses: taiki-e/install-action@cargo-hack
+      - uses: taiki-e/install-action@cargo-minimal-versions
+
+      - run: cargo minimal-versions check --workspace --direct
+      - run: cargo minimal-versions build --workspace --direct
+      - run: cargo minimal-versions test --workspace --direct

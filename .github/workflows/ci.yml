@@ -45,10 +45,10 @@ jobs:
         id: query-cargo-toml
         run: echo "rust_version=$(yq '.package.rust-version' Cargo.toml)" >> "$GITHUB_OUTPUT"
 
-      - uses: dtolnay/rust-toolchain@master
-        with:
-          toolchain: ${{ steps.query-cargo-toml.outputs.rust_version }}
-          components: rustfmt, clippy, llvm-tools-preview
+      - run: rustup default "${STEPS_QUERY_CARGO_TOML_OUTPUTS_RUST_VERSION}"
+        env:
+          STEPS_QUERY_CARGO_TOML_OUTPUTS_RUST_VERSION: ${{ steps.query-cargo-toml.outputs.rust_version }}
+      - run: rustup component add rustfmt clippy llvm-tools-preview
 
       - run: cargo verify-project
       - run: cargo fmt --check --all

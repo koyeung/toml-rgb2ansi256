@@ -28,7 +28,7 @@ jobs:
 
       - uses: mozilla-actions/sccache-action@v0.0.9
 
-      - uses: dtolnay/rust-toolchain@nightly
+      - run: rustup default nightly
 
       - uses: taiki-e/install-action@cargo-hack
       - uses: taiki-e/install-action@cargo-minimal-versions

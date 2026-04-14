@@ -61,14 +61,14 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/commitizen-tools/commitizen"
-rev = "v4.13.8"
+rev = "v4.13.9"
 hooks = [
   { id = "commitizen" }
 ]
 
 [[repos]]
 repo = "https://github.com/crate-ci/typos"
-rev = "v1.43.5"
+rev = "v1.45.0"
 hooks = [
   { id = "typos" }
 ]
@@ -102,7 +102,7 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/zizmorcore/zizmor-pre-commit"
-rev = "v1.22.0"
+rev = "v1.23.1"
 hooks = [
   { id = "zizmor" }
 ]

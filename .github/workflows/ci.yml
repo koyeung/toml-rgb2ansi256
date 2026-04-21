@@ -62,7 +62,7 @@ jobs:
         run: cargo build --verbose
 
       - name: Install grcov
-        uses: taiki-e/install-action@v2
+        uses: taiki-e/install-action@v2.75.12
         with:
           tool: grcov
 

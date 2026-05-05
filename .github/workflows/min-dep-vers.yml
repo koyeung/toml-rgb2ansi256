@@ -26,7 +26,7 @@ jobs:
         with:
           shared-key: "${{ github.workflow }}"
 
-      - uses: mozilla-actions/sccache-action@v0.0.9
+      - uses: mozilla-actions/sccache-action@v0.0.10
 
       - run: rustup default nightly
 

@@ -3,10 +3,7 @@
 #:schema https://www.schemastore.org/prek.json
 
 minimum_prek_version = "0.3.3"
-default_install_hook_types = [
-  "pre-commit",
-  "commit-msg"
-  ]
+default_install_hook_types = ["pre-commit", "commit-msg"]
 default_stages = ["pre-commit"]
 
 [[repos]]
@@ -33,76 +30,43 @@ repo = "https://github.com/pre-commit/pre-commit-hooks"
 rev = "v6.0.0"
 hooks = [
   { id = "check-illegal-windows-names" },
-  {
-    id = "check-shebang-scripts-are-executable",
-    exclude = '.*\.rs$'
-  },
+  { id = "check-shebang-scripts-are-executable", exclude = '.*\.rs$' },
   { id = "check-vcs-permalinks" },
   { id = "destroyed-symlinks" },
-  {
-    id = "detect-aws-credentials",
-    args = ["--allow-missing-credentials"]
-  },
-  {
-    id = "pretty-format-json",
-    args = ["--autofix"]
-  }
+  { id = "detect-aws-credentials", args = ["--allow-missing-credentials"] },
+  { id = "pretty-format-json", args = ["--autofix"] }
 ]
 
 [[repos]]
 repo = "https://github.com/bnjbvr/cargo-machete"
 rev = "v0.9.1"
-hooks = [
-  {
-    id = "cargo-machete",
-    args = ["--fix"]
-  }
-]
+hooks = [{ id = "cargo-machete", args = ["--fix"] }]
 
 [[repos]]
 repo = "https://github.com/commitizen-tools/commitizen"
 rev = "v4.13.9"
-hooks = [
-  { id = "commitizen" }
-]
+hooks = [{ id = "commitizen" }]
 
 [[repos]]
 repo = "https://github.com/crate-ci/typos"
 rev = "v1.45.0"
-hooks = [
-  { id = "typos" }
-]
+hooks = [{ id = "typos" }]
 
 [[repos]]
-repo = "https://github.com/google/yamlfmt"
-rev = "v0.21.0"
-hooks = [
-  { id = "yamlfmt" }
-]
+repo = "https://github.com/adrienverge/yamllint"
+rev = "v1.38.0"
+hooks = [{ id = "yamllint", args = ["--strict"] }]
 
 [[repos]]
 repo = "https://github.com/doublify/pre-commit-rust"
 rev = "v1.0"
 hooks = [
   { id = "fmt" },
-  {
-    id = "cargo-check",
-    args = ["--all-targets"]
-  },
-  {
-    id = "clippy",
-    args = [
-      "--all-targets",
-      "--",
-      "-D",
-      "warnings"
-    ]
-  }
+  { id = "cargo-check", args = ["--all-targets"] },
+  { id = "clippy", args = ["--all-targets", "--", "-D", "warnings"] }
 ]
 
 [[repos]]
 repo = "https://github.com/zizmorcore/zizmor-pre-commit"
 rev = "v1.23.1"
-hooks = [
-  { id = "zizmor" }
-]
+hooks = [{ id = "zizmor" }]

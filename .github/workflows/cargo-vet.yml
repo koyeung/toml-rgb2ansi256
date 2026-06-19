@@ -10,15 +10,15 @@ jobs:
     env:
       CARGO_VET_VERSION: 0.9.1
     steps:
-      - uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
-      - uses: Swatinem/rust-cache@v2
+      - uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32 # v2
         with:
           shared-key: "${{ github.workflow }}"
       - name: Install Rust
         run: rustup update stable && rustup default stable
-      - uses: actions/cache@v5
+      - uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: ${{ runner.tool_cache }}/cargo-vet
           key: cargo-vet-bin-${{ env.CARGO_VET_VERSION }}

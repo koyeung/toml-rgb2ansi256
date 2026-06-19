@@ -5,26 +5,5 @@ version: 3
 #   - pattern: action.yaml
 #   - pattern: */action.yaml
 
-ignore_actions:
-  # - name: slsa-framework/slsa-github-generator/\.github/workflows/generator_generic_slsa3\.yml
-  #   ref: v\d+\.\d+\.\d+
-  # - name: actions/.*
-  #   ref: main
-  # - name: suzuki-shunsuke/.*
-  #   ref: release-.*
-  - name: actions/.*
-    ref: v\d+
-  - name: astral-sh/.*
-    ref: v\d+
-  - name: dtolnay/.*
-    ref: master|stable
-  - name: EmbarkStudios/cargo-deny-action
-    ref: v\d+
-  - name: github/.*
-    ref: v\d+
-  - name: mozilla-actions/sccache-action
-    ref: v\d+\.\d+\.\d+
-  - name: Swatinem/rust-cache
-    ref: v\d+
-  - name: taiki-e/.*
-    ref: v\d+
+min_age:
+  value: 7

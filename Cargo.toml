@@ -10,6 +10,11 @@ repository = "https://github.com/koyeung/toml-rgb2ansi256/"
 rust-version = "1.85"
 description = "Convert RGB Hex to ANSI-256 codes"
 
+exclude = [
+  "/prek.toml",
+  ".*",
+]
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
